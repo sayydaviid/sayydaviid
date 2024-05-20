@@ -32,7 +32,7 @@
     </a>
     </a>
     <a href = "https://quantumnet.gercom.ufpa.br/">
-      <img width="25" src="gercom.png">
+      <img width="25" src="gercom.svg">
     </a>
 </div>
   
