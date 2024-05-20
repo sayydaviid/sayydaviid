@@ -25,7 +25,7 @@
   
   <h1 align="center">Redes Sociais</h1>
     <a href = "mailto: david.thevares21@outook.com">
-      <img width="30" src="gmail.svg">
+      <img width="30" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Gmail-Dark.svg">
     </a>
     <a href = "https://br.linkedin.com/in/t4vares">
       <img width="25" src="https://github.com/tandpfun/skill-icons/blob/main/icons/LinkedIn.svg">
