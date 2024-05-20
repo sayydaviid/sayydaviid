@@ -25,14 +25,14 @@
   
   <h1 align="center">Redes Sociais</h1>
     <a href = "mailto: david.thevares21@outook.com">
-      <img width="30" src="gmail.svg">
+      <img width="30" src="">
     </a>
     <a href = "https://br.linkedin.com/in/t4vares">
-      <img width="25" src="linkedin.svg">
+      <img width="25" src="">
     </a>
     </a>
     <a href = "https://quantumnet.gercom.ufpa.br/">
-      <img width="25" src="gercom.svg">
+      <img width="25" src="">
     </a>
 </div>
   
