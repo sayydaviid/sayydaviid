@@ -28,7 +28,7 @@
       <img width="30" src="">
     </a>
     <a href = "https://br.linkedin.com/in/t4vares">
-      <img width="25" src="">
+      <img width="25" src="linkedin.svg">
     </a>
     </a>
     <a href = "https://quantumnet.gercom.ufpa.br/">
