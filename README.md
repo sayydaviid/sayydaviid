@@ -9,7 +9,6 @@
 
 <div  align="center"> 
   <div style="display: inline_block"><br>
-    <img align="left" height="250" alt="coding-time" src="computer.gif">
     <h1 align="center"> Linguagens mais utilizadas </h1 >
     <img align="center" height="30" width="40" alt="python" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Python-Dark.svg">
     <img align="center" height="30" width="40" alt="Java"  src="https://github.com/tandpfun/skill-icons/blob/main/icons/Java-Dark.svg">
