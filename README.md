@@ -34,6 +34,23 @@
     <a href = "https://quantumnet.gercom.ufpa.br/">
       <img width="25" src="gercom.svg">
     </a>
+
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg"
+  />
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake.svg"
+  />
+  <img
+    alt="github contribution grid snake animation"
+    src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake.svg"
+  />
+</picture>
+
+
+    
 </div>
   
-![Snake animation](https://github.com/sayydaviid/sayydaviid/blob/output/github-contribution-grid-snake.svg)
