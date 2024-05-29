@@ -1,0 +1,2 @@
+class LinkLayer():
+    pass
