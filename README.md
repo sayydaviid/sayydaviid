@@ -5,6 +5,34 @@
   <img align="right" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sayydaviid&layout=compact&langs_count=16&theme=transparent"/>
 </div>
 <br>
+<div align="center"> 
+  <div style="display: inline_block"><br>
+    <h1 align="center">Principais Repositórios</h1>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+      <a href="https://github.com/sayydaviid/QuantumNET_test">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNET_test&theme=transparent">
+          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNET_test&theme=transparent">
+          <img width=42% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNET_test&theme=transparent" alt="QuantumNET_test">
+        </picture>
+      </a>
+      <a href="https://github.com/sayydaviid/quantumnet">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=quantumnet&theme=transparent">
+          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=quantumnet&theme=transparent">
+          <img width=42% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=quantumnet&theme=transparent" alt="quantumnet">
+        </picture>
+      </a>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 
 <div align="center"> 
   <div style="display: inline_block"><br>
@@ -29,47 +57,7 @@
   <a href="https://quantumnet.gercom.ufpa.br/">
     <img height="30" width="40" src="gercom.svg" alt="QuantumNET">
   </a>
-</div>
 
-<div align="center"> 
-  <div style="display: inline_block"><br>
-    <h1 align="center">Principais repositórios</h1>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-      <a href="https://github.com/sayydaviid/sayydaviid">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=sayydaviid&theme=dark">
-          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=sayydaviid&theme=light">
-          <img src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=sayydaviid&theme=light" alt="sayydaviid">
-        </picture>
-      </a>
-      <a href="https://github.com/sayydaviid/QuantumNET_test">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNET_test&theme=dark">
-          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNET_test&theme=light">
-          <img src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNET_test&theme=light" alt="QuantumNET_test">
-        </picture>
-      </a>
-      <a href="https://github.com/sayydaviid/quantumnet">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=quantumnet&theme=dark">
-          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=quantumnet&theme=light">
-          <img src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=quantumnet&theme=light" alt="quantumnet">
-        </picture>
-      </a>
-      <a href="https://github.com/sayydaviid/Prog1">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=Prog1&theme=dark">
-          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=Prog1&theme=light">
-          <img src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=Prog1&theme=light" alt="Prog1">
-        </picture>
-      </a>
-    </div>
-  </div>
-</div>
-
-<div align="center">
-  <div style="display: inline_block"><br>
-    <h1 align="center"></h1>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sayydaviid/sayydaviid/output/github-contribution-grid-snake-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sayydaviid/sayydaviid/output/github-contribution-grid-snake.svg">
