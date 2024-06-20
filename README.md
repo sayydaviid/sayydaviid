@@ -13,14 +13,14 @@
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNET_test&theme=transparent">
           <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNET_test&theme=transparent">
-          <img width=42% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNET_test&theme=transparent" alt="QuantumNET_test">
+          <img width=46% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNET_test&theme=transparent" alt="QuantumNET_test">
         </picture>
       </a>
       <a href="https://github.com/sayydaviid/quantumnet">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=quantumnet&theme=transparent">
           <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=quantumnet&theme=transparent">
-          <img width=42% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=quantumnet&theme=transparent" alt="quantumnet">
+          <img width=46% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=quantumnet&theme=transparent" alt="quantumnet">
         </picture>
       </a>
       </a>
