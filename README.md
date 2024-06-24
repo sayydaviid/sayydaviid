@@ -36,16 +36,34 @@
 
 <div align="center"> 
   <div style="display: inline_block"><br>
-    <h1 align="center">Linguagens mais utilizadas</h1>
-    <img align="center" height="30" width="40" alt="python" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Python-Dark.svg">
-    <img align="center" height="30" width="40" alt="Java" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Java-Dark.svg">
-    <img align="center" height="30" width="40" alt="CPP" src="https://github.com/tandpfun/skill-icons/blob/main/icons/CPP.svg">
-    <img align="center" height="30" width="40" alt="c-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg">
-    <img align="center" height="30" width="40" alt="js-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-    <img align="center" height="30" width="40" alt="react-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
-    <img align="center" height="30" width="40" alt="html-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-    <img align="center" height="30" width="40" alt="css-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-    <img align="center" height="30" width="40" alt="JupyterNotebook-icon" src="https://www.svgrepo.com/show/373718/jupyter.svg">
+    <h1 align="center">Linguagens Mais Utilizadas</h1>
+    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=python&sort=">
+      <img align="center" height="30" width="40" alt="Python" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Python-Dark.svg">
+    </a>
+    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=java&sort=">
+      <img align="center" height="30" width="40" alt="Java" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Java-Dark.svg">
+    </a>
+    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=c%2B%2B&sort=">
+      <img align="center" height="30" width="40" alt="C++" src="https://github.com/tandpfun/skill-icons/blob/main/icons/CPP.svg">
+    </a>
+    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=c&sort=">
+      <img align="center" height="30" width="40" alt="C" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg">
+    </a>
+    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=javascript&sort=">
+      <img align="center" height="30" width="40" alt="JavaScript" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+    </a>
+    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=react&sort=">
+      <img align="center" height="30" width="40" alt="React" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
+    </a>
+    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=html&sort=">
+      <img align="center" height="30" width="40" alt="HTML" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+    </a>
+    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=css&sort=">
+      <img align="center" height="30" width="40" alt="CSS" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+    </a>
+    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=jupyter+notebook&sort=">
+      <img align="center" height="30" width="40" alt="Jupyter Notebook" src="https://www.svgrepo.com/show/373718/jupyter.svg">
+    </a>
   </div>
   
   <h1 align="center">Redes Sociais</h1>
