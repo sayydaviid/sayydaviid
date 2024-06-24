@@ -37,6 +37,9 @@
 <div align="center"> 
   <div style="display: inline_block"><br>
     <h1 align="center">Linguagens Mais Utilizadas</h1>
+        <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=jupyter+notebook&sort=">
+      <img align="center" height="30" width="40" alt="Jupyter Notebook" src="https://www.svgrepo.com/show/373718/jupyter.svg">
+    </a>
     <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=python&sort=">
       <img align="center" height="30" width="40" alt="Python" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Python-Dark.svg">
     </a>
@@ -60,9 +63,6 @@
     </a>
     <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=css&sort=">
       <img align="center" height="30" width="40" alt="CSS" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-    </a>
-    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=jupyter+notebook&sort=">
-      <img align="center" height="30" width="40" alt="Jupyter Notebook" src="https://www.svgrepo.com/show/373718/jupyter.svg">
     </a>
   </div>
   
