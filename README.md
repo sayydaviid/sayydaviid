@@ -18,9 +18,9 @@
       </a>
       <a href="https://github.com/sayydaviid/quantumnet">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=quantumnet&theme=transparent">
-          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=quantumnet&theme=transparent">
-          <img width=46% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=quantumnet&theme=transparent" alt="quantumnet">
+          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNetOfficial&theme=transparent">
+          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNetOfficial&theme=transparent">
+          <img width=46% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNetOfficial&theme=transparent" alt="QuantumNetOfficial">
         </picture>
       </a>
       </a>
