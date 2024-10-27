@@ -13,9 +13,9 @@
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
       <a href="https://github.com/sayydaviid/QuantumNetOfficial">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNetOfficial&theme=transparent">
-          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNetOfficial&theme=transparent">
-          <img width=46% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNetOfficial&theme=transparent" alt="QuantumNetOfficial">
+          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNetOfficial&theme=transparent&v=1">
+          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNetOfficial&theme=transparent&v=1">
+          <img width=46% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNetOfficial&theme=transparent&v=1" alt="QuantumNetOfficial">
         </picture>
       </a>
       <a href="https://github.com/sayydaviid/Link-Layer-Schudeling">
