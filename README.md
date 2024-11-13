@@ -13,9 +13,9 @@
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
       <a href="https://github.com/sayydaviid/portfolio">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=portfolio&theme=transparent&v=1">
-          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=portfolio&theme=transparent&v=1">
-          <img width=46% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=portfolio&theme=transparent&v=1" alt="QuantumNetOfficial">
+          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=portfolio&theme=transparent&v=?">
+          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=portfolio&theme=transparent&v=?">
+          <img width=46% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=portfolio&theme=transparent&v=?" alt="QuantumNetOfficial">
         </picture>
       </a>
       <a href="https://github.com/sayydaviid/NoSpamEmail">
