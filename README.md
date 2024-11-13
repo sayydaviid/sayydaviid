@@ -11,18 +11,18 @@
   <div style="display: inline_block"><br>
     <h1 align="center">Principais Repositórios</h1>
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-      <a href="https://github.com/sayydaviid/QuantumNetOfficial">
+      <a href="https://github.com/sayydaviid/portfolio">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNetOfficial&theme=transparent&v=1">
-          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNetOfficial&theme=transparent&v=1">
-          <img width=46% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=QuantumNetOfficial&theme=transparent&v=1" alt="QuantumNetOfficial">
+          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=portfolio&theme=transparent&v=1">
+          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=portfolio&theme=transparent&v=1">
+          <img width=46% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=portfolio&theme=transparent&v=1" alt="QuantumNetOfficial">
         </picture>
       </a>
-      <a href="https://github.com/sayydaviid/Link-Layer-Schudeling">
+      <a href="https://github.com/sayydaviid/NoSpamEmail">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=Link-Layer-Schudeling&theme=transparent">
-          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=Link-Layer-Schudeling&theme=transparent">
-          <img width=46% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=Link-Layer-Schudeling&theme=transparent" alt="Link-Layer-Schudeling">
+          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=NoSpamEmail&theme=transparent&v=1">
+          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=NoSpamEmail&theme=transparent&=1">
+          <img width=46% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=NoSpamEmail&theme=transparent&v=1" alt="Link-Layer-Schudeling">
         </picture>
       </a>
       </a>
