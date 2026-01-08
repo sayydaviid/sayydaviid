@@ -1,84 +1,77 @@
-## Oi, prazer, me chamo Tavares!
+<div align="center">
+  <h1>Oi, prazer, me chamo Tavares! 👋</h1>
+</div>
 
 <div align="center">
-  <div style="display: flex; justify-content: center; align-items: center;">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=sayydaviid&show_icons=true&theme=transparent&v=1"/>
-    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sayydaviid&hide_progress=true&langs_count=16&theme=transparent"/>
-  </div>
+  <img height="180em" src="https://github-readme-stats-fast.vercel.app/api?username=sayydaviid&show_icons=true&theme=transparent" alt="GitHub Stats" />
+  <img height="180em" src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=sayydaviid&hide_progress=true&theme=transparent" alt="Top Languages" />
 </div>
-<br>
-<div align="center"> 
-  <div style="display: inline_block"><br>
-    <h1 align="center">Principais Repositórios</h1>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-      <a href="https://github.com/sayydaviid/portfolio">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=portfolio&theme=transparent&v=?">
-          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=portfolio&theme=transparent&v=?">
-          <img width=46% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=portfolio&theme=transparent&v=?" alt="QuantumNetOfficial">
-        </picture>
-      </a>
-      <a href="https://github.com/sayydaviid/NoSpamEmail">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=NoSpamEmail&theme=transparent&v=1">
-          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=NoSpamEmail&theme=transparent&=1">
-          <img width=46% src="https://github-readme-stats.vercel.app/api/pin/?username=sayydaviid&repo=NoSpamEmail&theme=transparent&v=1" alt="Link-Layer-Schudeling">
-        </picture>
-      </a>
-      </a>
-    </div>
+
+<br />
+
+<div align="center">
+  <h2>Principais Repositórios</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+    <a href="https://github.com/sayydaviid/portfolio">
+      <img width="48%" src="https://github-readme-stats-fast.vercel.app/api/pin/?username=sayydaviid&repo=portfolio&theme=transparent" alt="Portfolio Repo">
+    </a>
+    <a href="https://github.com/sayydaviid/NoSpamEmail">
+      <img width="48%" src="https://github-readme-stats-fast.vercel.app/api/pin/?username=sayydaviid&repo=NoSpamEmail&theme=transparent" alt="NoSpamEmail Repo">
+    </a>
   </div>
 </div>
 
+<br />
 
+<div align="center">
+  <h2>Linguagens Mais Utilizadas</h2>
+  <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=jupyter+notebook">
+    <img src="https://skillicons.dev/icons?i=jupyter" height="40" alt="Jupyter" />
+  </a>
+  <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=python">
+    <img src="https://skillicons.dev/icons?i=py" height="40" alt="Python" />
+  </a>
+  <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=java">
+    <img src="https://skillicons.dev/icons?i=java" height="40" alt="Java" />
+  </a>
+  <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=cpp">
+    <img src="https://skillicons.dev/icons?i=cpp" height="40" alt="C++" />
+  </a>
+  <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=c">
+    <img src="https://skillicons.dev/icons?i=c" height="40" alt="C" />
+  </a>
+  <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=javascript">
+    <img src="https://skillicons.dev/icons?i=js" height="40" alt="JavaScript" />
+  </a>
+  <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=react">
+    <img src="https://skillicons.dev/icons?i=react" height="40" alt="React" />
+  </a>
+  <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=html">
+    <img src="https://skillicons.dev/icons?i=html" height="40" alt="HTML" />
+  </a>
+  <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=css">
+    <img src="https://skillicons.dev/icons?i=css" height="40" alt="CSS" />
+  </a>
+</div>
 
+<br />
 
-
-
-
-<div align="center"> 
-  <div style="display: inline_block"><br>
-    <h1 align="center">Linguagens Mais Utilizadas</h1>
-        <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=jupyter+notebook&sort=">
-      <img align="center" height="30" width="40" alt="Jupyter Notebook" src="https://www.svgrepo.com/show/373718/jupyter.svg">
-    </a>
-    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=python&sort=">
-      <img align="center" height="30" width="40" alt="Python" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Python-Dark.svg">
-    </a>
-    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=java&sort=">
-      <img align="center" height="30" width="40" alt="Java" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Java-Dark.svg">
-    </a>
-    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=c%2B%2B&sort=">
-      <img align="center" height="30" width="40" alt="C++" src="https://github.com/tandpfun/skill-icons/blob/main/icons/CPP.svg">
-    </a>
-    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=c&sort=">
-      <img align="center" height="30" width="40" alt="C" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg">
-    </a>
-    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=javascript&sort=">
-      <img align="center" height="30" width="40" alt="JavaScript" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-    </a>
-    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=react&sort=">
-      <img align="center" height="30" width="40" alt="React" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
-    </a>
-    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=html&sort=">
-      <img align="center" height="30" width="40" alt="HTML" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-    </a>
-    <a href="https://github.com/sayydaviid?tab=repositories&q=&type=&language=css&sort=">
-      <img align="center" height="30" width="40" alt="CSS" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-    </a>
-  </div>
-  
-  <h1 align="center">Redes Sociais</h1>
+<div align="center">
+  <h2>Redes Sociais</h2>
   <a href="mailto:david.thevares21@outook.com">
-    <img height="30" width="40" src="gmail.svg" alt="Gmail">
+    <img src="https://skillicons.dev/icons?i=gmail" height="40" alt="Gmail" />
   </a>
   <a href="https://br.linkedin.com/in/t4vares">
-    <img height="30" width="40" src="linkedin.svg" alt="LinkedIn">
+    <img src="https://skillicons.dev/icons?i=linkedin" height="40" alt="LinkedIn" />
   </a>
   <a href="https://quantumnet.gercom.ufpa.br/">
-    <img height="30" width="40" src="gercom.svg" alt="QuantumNET">
+    <img src="https://skillicons.dev/icons?i=network" height="40" alt="QuantumNET" />
   </a>
+</div>
 
+<br />
+
+<div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sayydaviid/sayydaviid/output/github-contribution-grid-snake-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sayydaviid/sayydaviid/output/github-contribution-grid-snake.svg">
