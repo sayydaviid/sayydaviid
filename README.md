@@ -65,7 +65,7 @@
     <img src="https://skillicons.dev/icons?i=linkedin" height="40" alt="LinkedIn" />
   </a>
   <a href="https://quantumnet.gercom.ufpa.br/">
-    <img src="https://skillicons.dev/icons?i=network" height="40" alt="QuantumNET" />
+<sub><img src="gercom.svg" height="45" alt="QuantumNET" /></sub>
   </a>
 </div>
 
