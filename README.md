@@ -75,6 +75,6 @@
 <br />
 
 <div align="center">
-  <h2>Atividade de Commits (Grid)</h2>
-  <img src="https://metrics.lecoq.io/sayydaviid?template=classic&isocalendar=1&isocalendar.duration=half-year&config.timezone=America/Belem" alt="GitHub Metrics Chess" />
+  <h2>Tabuleiro de Commits</h2>
+  <img src="profile-3d-contrib/profile-night-rainbow.svg" alt="GitHub Chess Board" />
 </div>
