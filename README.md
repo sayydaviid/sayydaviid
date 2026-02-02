@@ -2,9 +2,6 @@
   <h1>Oi, prazer, me chamo Tavares! 👋</h1>
 </div>
 
-<div align="center"><div align="center">
-  <h2>Atividade de Commits (Grid)</h2>
-  <img src="https://metrics.lecoq.io/sayydaviid?template=classic&isocalendar=1&isocalendar.duration=half-year&config.timezone=America/Belem" alt="GitHub Metrics Chess" />
 </div>
   <img height="180em" src="https://github-readme-stats-fast.vercel.app/api?username=sayydaviid&show_icons=true&theme=transparent" alt="GitHub Stats" />
   <img height="180em" src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=sayydaviid&hide_progress=true&theme=transparent" alt="Top Languages" />
