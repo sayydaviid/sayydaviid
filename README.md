@@ -76,5 +76,5 @@
 
 <div align="center">
   <h2>Tabuleiro de Commits</h2>
-  <img src="profile-3d-contrib/profile-night-rainbow.svg" alt="GitHub Chess Board" />
+  <img src="./profile-3d-contrib/profile-night-rainbow.svg" alt="GitHub Chess Board" />
 </div>
