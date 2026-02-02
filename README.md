@@ -72,6 +72,9 @@
 <br />
 
 <div align="center">
-  <h2>Tabuleiro de Commits</h2>
-  <img src="./profile-3d-contrib/profile-night-rainbow.svg" alt="GitHub Chess Board" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sayydaviid/sayydaviid/output/pacman-contribution-graph-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sayydaviid/sayydaviid/output/pacman-contribution-graph.svg">
+    <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/sayydaviid/sayydaviid/output/pacman-contribution-graph.svg">
+  </picture>
 </div>
