@@ -2,7 +2,7 @@ name: generate pacman game
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # 1x por dia
+    - cron: "0 0 * * *"
   workflow_dispatch:
   push:
     branches:
@@ -14,16 +14,24 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    
+    # Força o uso do Node 24 para sumir com os avisos do log
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
     steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
       - name: generate pacman-contribution-graph.svg
         uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: ${{ github.repository_owner }}
 
       - name: push pacman svgs to output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+        uses: crazy-max/ghaction-github-pages@v4 # Atualizei para v4
         with:
           target_branch: output
-          build_dir: dist
+          build_dir: .  # Mudei de 'dist' para '.' (raiz), onde o svg é gerado
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
