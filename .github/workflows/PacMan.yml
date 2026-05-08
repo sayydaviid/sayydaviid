@@ -1,4 +1,4 @@
-name: Generate custom pacman contribution graph
+name: Generate custom pacman maze
 
 on:
   schedule:
@@ -27,7 +27,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Generate pacman SVG
+      - name: Generate Pacman maze SVG
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USERNAME: ${{ github.repository_owner }}
