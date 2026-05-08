@@ -1,0 +1,48 @@
+name: Generate chess contribution animation
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/generate_chess.py"
+      - ".github/workflows/chess.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate chess SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USERNAME: ${{ github.repository_owner }}
+        run: python scripts/generate_chess.py
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github bot"
+          git config user.email "github@users.noreply.github.com"
+
+          git add output/chess.svg output/chess_dark.svg
+
+          if git diff --cached --quiet; then
+            echo "Sem mudanças para commitar"
+          else
+            git commit -m "Atualiza xadrez de contribuições"
+            git push
+          fi
