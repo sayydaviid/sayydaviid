@@ -73,8 +73,8 @@
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sayydaviid/sayydaviid/main/output/chess_dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sayydaviid/sayydaviid/main/output/chess.svg">
-    <img alt="xadrez contribution graph" src="https://raw.githubusercontent.com/sayydaviid/sayydaviid/main/output/chess.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sayydaviid/sayydaviid/main/output/pacman_contribution_graph_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sayydaviid/sayydaviid/main/output/pacman_contribution_graph.svg">
+    <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/sayydaviid/sayydaviid/main/output/pacman_contribution_graph.svg" width="100%">
   </picture>
 </div>
