@@ -64,237 +64,346 @@ def fetch_contributions(username: str, token: str) -> dict:
     return data["data"]["user"]["contributionsCollection"]["contributionCalendar"]
 
 
-def build_svg(calendar: dict, dark: bool = True) -> str:
+def build_svg(calendar: dict) -> str:
     total = calendar["totalContributions"]
 
-    width = 1000
-    height = 620
-    duration = 28
+    # ── Dimensões ──────────────────────────────────────────────────────────────
+    width  = 560
+    height = 430
+    duration = 24          # segundos de animação
 
-    bg = "#05050b"
-    wall = "#312b92"
-    wall_inner = "#4f46d9"
-    pellet = "#ff7a1a"
-    text = "#f8fafc"
-    muted = "#94a3b8"
-    pacman = "#ffc928"
-    red = "#ff4b3e"
-    pink = "#ff72b6"
-    blue = "#58c7f3"
-    orange = "#ff9f2f"
-    green = "#57c785"
+    # ── Paleta clássica arcade ──────────────────────────────────────────────────
+    bg           = "#000000"   # fundo preto puro
+    wall_color   = "#2121de"   # azul clássico do Pac-Man
+    wall_hi      = "#4f4fff"   # highlight interno (linha fina)
+    pellet_color = "#ffffff"   # bolinhas brancas
+    score_color  = "#ffff00"   # placar amarelo
+    pacman_color = "#ffc928"   # amarelo do Pac-Man
+    ghost_red    = "#ff0000"
+    ghost_pink   = "#ffb8ff"
+    ghost_blue   = "#00b8ff"
+    ghost_orange = "#ffb847"
 
     svg = []
 
+    # ── Cabeçalho SVG ──────────────────────────────────────────────────────────
     svg.append(
         f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" '
         f'xmlns="http://www.w3.org/2000/svg" role="img" '
-        f'aria-label="Pacman animado de contribuições de {html.escape(USERNAME)}">'
+        f'aria-label="Contribuições de {html.escape(USERNAME)} no estilo Pac-Man">'
     )
 
+    # ── Sombra suave nos personagens ───────────────────────────────────────────
     svg.append("<defs>")
     svg.append(
-        '<filter id="shadow">'
-        '<feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.55"/>'
+        '<filter id="glow">'
+        '<feDropShadow dx="0" dy="0" stdDeviation="3" '
+        'flood-color="#ffffff" flood-opacity="0.35"/>'
         "</filter>"
     )
     svg.append("</defs>")
 
+    # ── Fundo ──────────────────────────────────────────────────────────────────
     svg.append(f'<rect width="{width}" height="{height}" fill="{bg}"/>')
 
+    # ── Título clássico ────────────────────────────────────────────────────────
     svg.append(
-        f'<text x="500" y="48" text-anchor="middle" '
-        f'font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" fill="{text}">'
-        f'{html.escape(USERNAME)} no mapa dos commits'
+        f'<text x="280" y="22" text-anchor="middle" '
+        f'font-family="\'Courier New\', monospace" font-size="13" font-weight="bold" '
+        f'fill="{score_color}" letter-spacing="2">'
+        f'{html.escape(USERNAME.upper())}'
         f"</text>"
     )
 
-    svg.append(
-        f'<text x="500" y="78" text-anchor="middle" '
-        f'font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="{muted}">'
-        f'SCORE {total}'
-        f"</text>"
-    )
+    # ══════════════════════════════════════════════════════════════════════════
+    # Labirinto clássico
+    # Origem do labirinto: x=20, y=32   largura=520  altura=340
+    # Célula base: 20×20 px  →  26 colunas × 17 linhas
+    # ══════════════════════════════════════════════════════════════════════════
+    MX, MY = 20, 32       # origem
+    CW, CH = 20, 20       # tamanho da célula
 
-    def wall_path(d: str) -> None:
+    def gx(col): return MX + col * CW   # coordenada x pela coluna
+    def gy(row): return MY + row * CH   # coordenada y pela linha
+
+    # ── Desenha uma parede: duas linhas (cor base + highlight) ─────────────────
+    def wall(d: str) -> None:
         svg.append(
-            f'<path d="{d}" fill="none" stroke="#080625" stroke-width="34" '
-            f'stroke-linecap="round" stroke-linejoin="round"/>'
+            f'<path d="{d}" fill="none" stroke="{wall_color}" '
+            f'stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>'
         )
         svg.append(
-            f'<path d="{d}" fill="none" stroke="{wall}" stroke-width="24" '
-            f'stroke-linecap="round" stroke-linejoin="round"/>'
-        )
-        svg.append(
-            f'<path d="{d}" fill="none" stroke="{wall_inner}" stroke-width="4" '
-            f'stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>'
+            f'<path d="{d}" fill="none" stroke="{wall_hi}" '
+            f'stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" '
+            f'opacity="0.7"/>'
         )
 
     svg.append('<g id="maze">')
 
-    wall_path("M 70 110 H 930 V 520 H 70 Z")
+    # Borda externa
+    wall(f"M {gx(0)} {gy(0)} H {gx(26)} V {gy(17)} H {gx(0)} Z")
 
-    wall_path("M 120 160 H 250 V 250 H 120")
-    wall_path("M 750 160 H 880 V 250 H 750")
+    # ── Bloco superior-esquerdo ────────────────────────────────────────────────
+    wall(f"M {gx(1)} {gy(1)} H {gx(5)} V {gy(4)} H {gx(1)}")
+    wall(f"M {gx(7)} {gy(1)} H {gx(11)}")
+    wall(f"M {gx(7)} {gy(1)} V {gy(3)}")
+    wall(f"M {gx(1)} {gy(6)} H {gx(5)} V {gy(8)} H {gx(1)}")
+    wall(f"M {gx(7)} {gy(4)} H {gx(11)} V {gy(8)} H {gx(7)}")
 
-    wall_path("M 120 380 H 250 V 470 H 120")
-    wall_path("M 750 380 H 880 V 470 H 750")
+    # ── Bloco superior-direito (espelho) ───────────────────────────────────────
+    wall(f"M {gx(25)} {gy(1)} H {gx(21)} V {gy(4)} H {gx(25)}")
+    wall(f"M {gx(19)} {gy(1)} H {gx(15)}")
+    wall(f"M {gx(19)} {gy(1)} V {gy(3)}")
+    wall(f"M {gx(25)} {gy(6)} H {gx(21)} V {gy(8)} H {gx(25)}")
+    wall(f"M {gx(19)} {gy(4)} H {gx(15)} V {gy(8)} H {gx(19)}")
 
-    wall_path("M 315 160 H 460")
-    wall_path("M 540 160 H 685")
+    # ── Corredor central superior ──────────────────────────────────────────────
+    wall(f"M {gx(12)} {gy(1)} H {gx(14)}")
+    wall(f"M {gx(12)} {gy(3)} H {gx(14)} V {gy(6)} H {gx(12)} Z")
 
-    wall_path("M 315 470 H 460")
-    wall_path("M 540 470 H 685")
+    # ── Túneis laterais (linhas abertas no meio) ───────────────────────────────
+    wall(f"M {gx(1)} {gy(10)} H {gx(5)} V {gy(13)} H {gx(1)}")
+    wall(f"M {gx(25)} {gy(10)} H {gx(21)} V {gy(13)} H {gx(25)}")
 
-    wall_path("M 315 220 V 355")
-    wall_path("M 685 220 V 355")
+    # ── Bloco meio-esquerdo ────────────────────────────────────────────────────
+    wall(f"M {gx(7)} {gy(10)} H {gx(11)} V {gy(12)}")
+    wall(f"M {gx(7)} {gy(10)} V {gy(13)}")
 
-    wall_path("M 390 250 H 610")
-    wall_path("M 390 380 H 610")
+    # ── Bloco meio-direito ─────────────────────────────────────────────────────
+    wall(f"M {gx(19)} {gy(10)} H {gx(15)} V {gy(12)}")
+    wall(f"M {gx(19)} {gy(10)} V {gy(13)}")
 
-    wall_path("M 440 300 H 560 V 350 H 440 Z")
+    # ── Casa dos fantasmas (centro) ────────────────────────────────────────────
+    ghost_box = (
+        f"M {gx(10)} {gy(7)} H {gx(16)} V {gy(10)} H {gx(10)} Z"
+    )
+    svg.append(
+        f'<path d="{ghost_box}" fill="none" stroke="{wall_color}" '
+        f'stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>'
+    )
+    svg.append(
+        f'<path d="{ghost_box}" fill="none" stroke="{wall_hi}" '
+        f'stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>'
+    )
+    # Porta da casa (abertura no topo, linha rosa)
+    portal_x1 = gx(12)
+    portal_x2 = gx(14)
+    portal_y  = gy(7)
+    svg.append(
+        f'<line x1="{portal_x1}" y1="{portal_y}" x2="{portal_x2}" y2="{portal_y}" '
+        f'stroke="#ffb8ff" stroke-width="3"/>'
+    )
 
-    wall_path("M 70 310 H 210")
-    wall_path("M 790 310 H 930")
+    # ── Bloco inferior-esquerdo ────────────────────────────────────────────────
+    wall(f"M {gx(1)} {gy(14)} H {gx(5)} V {gy(16)} H {gx(1)}")
+    wall(f"M {gx(7)} {gy(13)} H {gx(11)} V {gy(16)} H {gx(7)}")
+    wall(f"M {gx(12)} {gy(13)} H {gx(14)}")
 
-    wall_path("M 250 250 V 380")
-    wall_path("M 750 250 V 380")
-
-    wall_path("M 315 410 H 685")
+    # ── Bloco inferior-direito (espelho) ───────────────────────────────────────
+    wall(f"M {gx(25)} {gy(14)} H {gx(21)} V {gy(16)} H {gx(25)}")
+    wall(f"M {gx(19)} {gy(13)} H {gx(15)} V {gy(16)} H {gx(19)}")
 
     svg.append("</g>")
 
+    # ══════════════════════════════════════════════════════════════════════════
+    # Pellets (bolinhas brancas)
+    # Grade de 20×20 px; evita células de parede e casa dos fantasmas
+    # ══════════════════════════════════════════════════════════════════════════
+
+    # Regiões bloqueadas (col_min, row_min, col_max, row_max) — inclusive
+    blocked_rects = [
+        (0,  0, 0, 17),  (26, 0, 26, 17),   # bordas
+        (0,  0, 26, 0),  (0, 17, 26, 17),
+        (1,  1, 5,  4),  (21, 1, 25, 4),     # blocos sup
+        (7,  1, 11, 0),  (15, 1, 19, 0),
+        (7,  1, 7,  3),  (19, 1, 19, 3),
+        (1,  6, 5,  8),  (21, 6, 25, 8),
+        (7,  4, 11, 8),  (15, 4, 19, 8),
+        (12, 1, 14, 1),  (12, 3, 14, 6),
+        (10, 7, 16, 10),                      # casa dos fantasmas
+        (1, 10, 5, 13),  (21,10, 25,13),     # blocos meio
+        (7, 10, 11,12),  (15,10, 19,12),
+        (7, 10, 7, 13),  (19,10, 19,13),
+        (1, 14, 5, 16),  (21,14, 25,16),     # blocos inf
+        (7, 13, 11,16),  (15,13, 19,16),
+        (12,13, 14,13),
+    ]
+
+    def is_blocked(col, row):
+        for x1, y1, x2, y2 in blocked_rects:
+            if x1 <= col <= x2 and y1 <= row <= y2:
+                return True
+        return False
+
     pellets = []
-    for y in range(140, 500, 35):
-        for x in range(105, 900, 35):
-            blocked = False
+    for row in range(1, 17):
+        for col in range(1, 26):
+            if not is_blocked(col, row):
+                px = gx(col) + CW // 2
+                py = gy(row) + CH // 2
+                pellets.append((px, py))
 
-            blocked_areas = [
-                (95, 135, 275, 275),
-                (725, 135, 905, 275),
-                (95, 355, 275, 495),
-                (725, 355, 905, 495),
-                (295, 135, 480, 185),
-                (520, 135, 705, 185),
-                (295, 445, 480, 495),
-                (520, 445, 705, 495),
-                (290, 210, 340, 365),
-                (660, 210, 710, 365),
-                (365, 225, 635, 275),
-                (365, 355, 635, 405),
-                (415, 275, 585, 375),
-                (40, 285, 230, 335),
-                (770, 285, 960, 335),
-            ]
-
-            for x1, y1, x2, y2 in blocked_areas:
-                if x1 <= x <= x2 and y1 <= y <= y2:
-                    blocked = True
-                    break
-
-            if not blocked:
-                pellets.append((x, y))
-
-    pacman_path = (
-        "M 140 310 "
-        "H 250 V 185 H 460 "
-        "V 250 H 610 "
-        "V 185 H 860 "
-        "V 310 H 750 "
-        "V 445 H 860 "
-        "V 470 H 685 "
-        "V 410 H 315 "
-        "V 470 H 140 "
-        "V 380 H 250 "
-        "V 250 H 140 "
-        "Z"
-    )
+    # Power pellets (4 cantos)
+    power_positions = [
+        (gx(1) + 10, gy(1) + 10),
+        (gx(25) + 10, gy(1) + 10),
+        (gx(1) + 10, gy(15) + 10),
+        (gx(25) + 10, gy(15) + 10),
+    ]
 
     svg.append('<g id="pellets">')
-    for index, (x, y) in enumerate(pellets):
-        delay = round((index % 80) * 0.16, 2)
-
+    for index, (px, py) in enumerate(pellets):
+        delay = round((index % 60) * 0.18, 2)
         svg.append(
-            f'<circle cx="{x}" cy="{y}" r="4" fill="{pellet}">'
+            f'<circle cx="{px}" cy="{py}" r="2.5" fill="{pellet_color}">'
             f'<animate attributeName="opacity" values="1;1;0;0;1" '
-            f'keyTimes="0;0.55;0.58;0.92;1" dur="{duration}s" '
+            f'keyTimes="0;0.50;0.54;0.96;1" dur="{duration}s" '
             f'begin="{delay}s" repeatCount="indefinite"/>'
+            f"</circle>"
+        )
+
+    # Power pellets piscantes
+    for px, py in power_positions:
+        svg.append(
+            f'<circle cx="{px}" cy="{py}" r="6" fill="{pellet_color}">'
+            f'<animate attributeName="opacity" values="1;0;1" '
+            f'keyTimes="0;0.5;1" dur="0.6s" repeatCount="indefinite"/>'
             f"</circle>"
         )
     svg.append("</g>")
 
-    svg.append('<g id="bonus">')
+    # ══════════════════════════════════════════════════════════════════════════
+    # Rota do Pac-Man — percorre o labirinto em loop
+    # ══════════════════════════════════════════════════════════════════════════
+    pm = lambda c, r: f"{gx(c) + 10} {gy(r) + 10}"
 
-    svg.append('<g transform="translate(300 160)">')
-    svg.append(f'<circle cx="-8" cy="12" r="9" fill="#ff4b2b"/>')
-    svg.append(f'<circle cx="10" cy="9" r="9" fill="#ff4b2b"/>')
-    svg.append(f'<path d="M -5 2 C 6 -18 15 -22 22 -28" fill="none" stroke="{green}" stroke-width="3"/>')
-    svg.append(f'<path d="M 22 -28 C 10 -31 5 -25 -1 -18" fill="{green}"/>')
-    svg.append("</g>")
+    pacman_path = (
+        f"M {pm(1,15)} "
+        f"H {pm(25,15)} "
+        f"V {pm(25,13)} "
+        f"H {pm(20,13)} "
+        f"V {pm(20,10)} "
+        f"H {pm(25,10)} "
+        f"V {pm(25,6)} "
+        f"H {pm(20,6)} "
+        f"V {pm(20,4)} "
+        f"H {pm(25,4)} "
+        f"V {pm(25,1)} "
+        f"H {pm(20,1)} "
+        f"V {pm(20,3)} "
+        f"H {pm(15,3)} "
+        f"V {pm(15,1)} "
+        f"H {pm(12,1)} "
+        f"V {pm(12,3)} "
+        f"H {pm(7,3)} "
+        f"V {pm(7,1)} "
+        f"H {pm(1,1)} "
+        f"V {pm(1,8)} "
+        f"H {pm(6,8)} "
+        f"V {pm(6,4)} "
+        f"H {pm(12,4)} "
+        f"V {pm(12,6)} "
+        f"H {pm(14,6)} "
+        f"V {pm(14,4)} "
+        f"H {pm(20,4)} "
+        f"V {pm(20,8)} "
+        f"H {pm(25,8)} "
+        f"V {pm(25,6)} "
+        f"H {pm(20,6)} "
+        f"V {pm(20,10)} "
+        f"H {pm(12,10)} "
+        f"V {pm(12,13)} "
+        f"H {pm(15,13)} "
+        f"V {pm(15,10)} "
+        f"H {pm(20,10)} "
+        f"H {pm(14,10)} "
+        f"V {pm(14,13)} "
+        f"H {pm(7,13)} "
+        f"V {pm(7,10)} "
+        f"H {pm(1,10)} "
+        f"V {pm(1,15)} Z"
+    )
 
-    svg.append('<g transform="translate(702 160) rotate(38)">')
-    svg.append('<rect x="-7" y="-23" width="14" height="46" rx="7" fill="#ffffff"/>')
-    svg.append('<rect x="-7" y="0" width="14" height="23" rx="7" fill="#ff563d"/>')
-    svg.append("</g>")
+    # ══════════════════════════════════════════════════════════════════════════
+    # Personagens
+    # ══════════════════════════════════════════════════════════════════════════
+    svg.append('<g id="characters" filter="url(#glow)">')
 
-    svg.append('<g transform="translate(500 485)">')
-    svg.append(f'<circle cx="-8" cy="12" r="9" fill="#ff4b2b"/>')
-    svg.append(f'<circle cx="10" cy="9" r="9" fill="#ff4b2b"/>')
-    svg.append(f'<path d="M -5 2 C 6 -18 15 -22 22 -28" fill="none" stroke="{green}" stroke-width="3"/>')
-    svg.append(f'<path d="M 22 -28 C 10 -31 5 -25 -1 -18" fill="{green}"/>')
-    svg.append("</g>")
-
-    svg.append("</g>")
-
-    svg.append('<g id="characters" filter="url(#shadow)">')
-
+    # ── Pac-Man ────────────────────────────────────────────────────────────────
     svg.append("<g>")
     svg.append(
-        f'<animateMotion dur="{duration}s" repeatCount="indefinite" rotate="auto" path="{pacman_path}"/>'
+        f'<animateMotion dur="{duration}s" repeatCount="indefinite" '
+        f'rotate="auto" path="{pacman_path}"/>'
     )
-    svg.append(f'<circle cx="0" cy="0" r="22" fill="{pacman}"/>')
-    svg.append(f'<polygon points="0,0 27,-15 27,15" fill="{bg}">')
+    svg.append(f'<circle cx="0" cy="0" r="9" fill="{pacman_color}"/>')
+    # boca animada
+    svg.append(f'<polygon points="0,0 12,-7 12,7" fill="{bg}">')
     svg.append(
         '<animate attributeName="points" '
-        'values="0,0 27,-15 27,15;0,0 27,-3 27,3;0,0 27,-15 27,15" '
-        'dur="0.25s" repeatCount="indefinite"/>'
+        'values="0,0 12,-7 12,7;0,0 12,-1 12,1;0,0 12,-7 12,7" '
+        'dur="0.22s" repeatCount="indefinite"/>'
     )
     svg.append("</polygon>")
-    svg.append('<circle cx="5" cy="-12" r="5" fill="#ffffff"/>')
-    svg.append('<circle cx="7" cy="-12" r="2" fill="#111827"/>')
     svg.append("</g>")
 
+    # ── Fantasmas ──────────────────────────────────────────────────────────────
     def ghost(color: str, path: str, delay: str) -> None:
         svg.append("<g>")
         svg.append(
-            f'<animateMotion dur="{duration}s" begin="{delay}" repeatCount="indefinite" rotate="auto" path="{path}"/>'
+            f'<animateMotion dur="{duration}s" begin="{delay}" '
+            f'repeatCount="indefinite" rotate="auto" path="{path}"/>'
         )
+        # corpo do fantasma
         svg.append(
-            f'<path d="M -16 16 L -16 -5 C -16 -20 -8 -28 0 -28 C 8 -28 16 -20 16 -5 L 16 16 '
-            f'L 10 10 L 5 16 L 0 10 L -5 16 L -10 10 Z" fill="{color}"/>'
+            f'<path d="M -9 9 L -9 -4 '
+            f'C -9 -14 -5 -18 0 -18 C 5 -18 9 -14 9 -4 L 9 9 '
+            f'L 6 6 L 3 9 L 0 6 L -3 9 L -6 6 Z" fill="{color}"/>'
         )
-        svg.append('<circle cx="-6" cy="-11" r="4.5" fill="#ffffff"/>')
-        svg.append('<circle cx="6" cy="-11" r="4.5" fill="#ffffff"/>')
-        svg.append('<circle cx="-5" cy="-11" r="2" fill="#111827"/>')
-        svg.append('<circle cx="7" cy="-11" r="2" fill="#111827"/>')
+        # olhos
+        svg.append('<circle cx="-3.5" cy="-7" r="3" fill="#ffffff"/>')
+        svg.append('<circle cx="3.5"  cy="-7" r="3" fill="#ffffff"/>')
+        svg.append('<circle cx="-2.5" cy="-7" r="1.5" fill="#222aff"/>')
+        svg.append('<circle cx="4.5"  cy="-7" r="1.5" fill="#222aff"/>')
         svg.append("</g>")
 
-    ghost(red, "M 500 310 H 610 V 250 H 390 V 380 H 610 V 310 H 500", "0s")
-    ghost(pink, "M 170 420 H 250 V 250 H 315 V 470 H 170 Z", "2s")
-    ghost(blue, "M 830 420 H 750 V 250 H 685 V 470 H 830 Z", "4s")
-    ghost(orange, "M 500 185 H 860 V 310 H 750 V 445 H 500 Z", "6s")
+    # Rotas dos fantasmas (circulam pela casa e saem)
+    ghost_path_red = (
+        f"M {pm(13,8)} V {pm(13,6)} H {pm(8,6)} V {pm(8,13)} "
+        f"H {pm(13,13)} V {pm(13,8)} Z"
+    )
+    ghost_path_pink = (
+        f"M {pm(13,8)} V {pm(13,11)} H {pm(18,11)} V {pm(18,6)} "
+        f"H {pm(13,6)} V {pm(13,8)} Z"
+    )
+    ghost_path_blue = (
+        f"M {pm(13,8)} H {pm(8,8)} V {pm(8,2)} H {pm(18,2)} "
+        f"V {pm(18,8)} H {pm(13,8)} Z"
+    )
+    ghost_path_orange = (
+        f"M {pm(13,8)} H {pm(18,8)} V {pm(18,15)} H {pm(8,15)} "
+        f"V {pm(8,8)} H {pm(13,8)} Z"
+    )
+
+    ghost(ghost_red,    ghost_path_red,    "0s")
+    ghost(ghost_pink,   ghost_path_pink,   "2s")
+    ghost(ghost_blue,   ghost_path_blue,   "4s")
+    ghost(ghost_orange, ghost_path_orange, "6s")
 
     svg.append("</g>")
 
+    # ══════════════════════════════════════════════════════════════════════════
+    # Placar — estilo clássico, canto inferior esquerdo
+    # ══════════════════════════════════════════════════════════════════════════
+    score_y = MY + 17 * CH + 22
     svg.append(
-        f'<text x="500" y="575" text-anchor="middle" '
-        f'font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="{muted}">'
-        f'{total} commits nos últimos meses'
+        f'<text x="16" y="{score_y}" '
+        f'font-family="\'Courier New\', monospace" font-size="15" font-weight="bold" '
+        f'fill="{score_color}" letter-spacing="1">'
+        f'SCORE: {total}'
         f"</text>"
     )
 
     svg.append("</svg>")
-
     return "\n".join(svg)
 
 
@@ -303,12 +412,8 @@ def main() -> None:
         raise RuntimeError("GITHUB_TOKEN não encontrado.")
 
     calendar = fetch_contributions(USERNAME, TOKEN)
-
-    svg = build_svg(calendar, dark=False)
-    svg_dark = build_svg(calendar, dark=True)
-
+    svg = build_svg(calendar)
     (OUTPUT_DIR / "pacman_contribution_graph.svg").write_text(svg, encoding="utf-8")
-    (OUTPUT_DIR / "pacman_contribution_graph_dark.svg").write_text(svg_dark, encoding="utf-8")
 
     print("Pacman gerado com sucesso.")
     print(f"Usuário: {USERNAME}")
