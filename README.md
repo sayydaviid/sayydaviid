@@ -2,7 +2,7 @@
   <h1>Oi, prazer, me chamo Tavares! 👋</h1>
 </div>
 <div align="center">
-  <img height="180em" src="https://github-readme-stats-fast.vercel.app/api?username=sayydaviid&show_icons=true&theme=transparent" alt="GitHub Stats" />
+  <img height="180em" src="https://github-readme-stats-fast.vercel.app/api?username=sayydaviid&show_icons=true&theme=transparent&include_all_commits=true" alt="GitHub Stats" />
   <img height="180em" src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=sayydaviid&hide_progress=true&theme=transparent" alt="Top Languages" />
 </div>
 
